@@ -8,7 +8,8 @@ public class Thread2Anonymous {
 		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
-				System.out.println("Runnable Thread example...");
+				String name = Thread.currentThread().getName();
+				System.out.println("Runnable Thread example..."+name +"is Running");
 			}
 			
 		};
@@ -17,7 +18,8 @@ public class Thread2Anonymous {
 		thread.start();
 		
 		Runnable runnable2 = () -> {
-			System.out.println("Lambda Expression example");
+			String name = Thread.currentThread().getName();
+			System.out.println("Lambda Expression example:"+name +" IS running");
 		};
 		
 		Thread runnableThread = new Thread(runnable2);
